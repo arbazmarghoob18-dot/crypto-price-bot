@@ -4,26 +4,18 @@ import time
 BOT_TOKEN = "8834672342:AAH8W0iQx7hlQ3d84-8neh_Vs0Q1uxfZS-0"
 CHANNEL_ID = "@fewtiny"
 
-def get_price():
-    url = "https://api.binance.com/api/v3/ticker/price?symbol=TRXUSDT"
-    data = requests.get(url).json()
-    return data["price"], "0"
-
 while True:
     try:
-        price, change = get_price()
+        url = "https://api.binance.com/api/v3/ticker/price?symbol=TRXUSDT"
+        data = requests.get(url).json()
 
-        if float(change) >= 0:
-            dot = "🟢"
-        else:
-            dot = "🔴"
+        price = data["price"]
 
         text = f"""💎 TRON (TRX)
 
-💲 Price: ${price}
-{dot} ({change}%)
+💰 Price: ${price}
 
-⏰ {time.strftime("%H:%M:%S")}
+🕒 {time.strftime("%H:%M:%S")}
 """
 
         requests.post(
@@ -34,6 +26,7 @@ while True:
             }
         )
 
+        print("Message Sent")
         time.sleep(60)
 
     except Exception as e:
