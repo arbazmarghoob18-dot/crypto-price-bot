@@ -8,6 +8,7 @@ while True:
     try:
         url = "https://api.binance.com/api/v3/ticker/price?symbol=TRXUSDT"
         data = requests.get(url).json()
+        print(data)
 
         price = data["price"]
 
