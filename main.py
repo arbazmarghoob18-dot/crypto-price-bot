@@ -19,7 +19,7 @@ while True:
 """
 
         requests.post(
-            f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage",
+            f"https://api.telegram.org/bot{8834672342:AAH8W0iQx7hlQ3d84-8neh_Vs0Q1uxfZS-0}/sendMessage",
             data={
                 "chat_id": CHANNEL_ID,
                 "text": text
