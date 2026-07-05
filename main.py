@@ -6,9 +6,9 @@ CHANNEL_ID = "@fewtiny"
 
 while True:
     try:
-        url = "https://api.binance.com/api/v3/ticker/price?symbol=TRXUSDT"
-        data = requests.get(url).json()
-        print(data)
+        url = "https://api.coingecko.com/api/v3/simple/price?ids=tron&vs_currencies=usd"
+data = requests.get(url).json()
+price = data["tron"]["usd"]
 
         price = data["price"]
 
