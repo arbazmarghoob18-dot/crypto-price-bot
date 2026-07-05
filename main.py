@@ -5,9 +5,9 @@ BOT_TOKEN = "8834672342:AAH8W0iQx7hlQ3d84-8neh_Vs0Q1uxfZS-0"
 CHANNEL_ID = "@fewtiny"
 
 def get_price():
-    url = "https://api.binance.com/api/v3/ticker/24hr?symbol=TRXUSDT"
+    url = "url = "https://api.binance.com/api/v3/ticker/price?symbol=TRXUSDT""
     data = requests.get(url).json()
-    return data["lastPrice"], data["priceChangePercent"]
+    return data["price"], "0"
 
 while True:
     try:
